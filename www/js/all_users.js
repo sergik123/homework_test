@@ -5,7 +5,7 @@
 	marker_str          = localStorage.users ? JSON.parse(localStorage.users) : [];
 	var count;
 
-	//этот цикл определяет id текущего пользователя и создает ссылку 
+	///этот цикл определяет id текущего пользователя и создает ссылку 
 	//чтоб можно было переходить по моей странице и попадать на страницу текущего пользователя
 	for(var k = 0; k < marker_str.length;k++){
 		if(marker_str[k].user.id == localStorage.user_id){
