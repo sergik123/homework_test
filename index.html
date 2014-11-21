@@ -1,0 +1,182 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/registration.css">
+	<link rel="stylesheet" type="text/css" href="css/auth.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="stylesheet" type="text/css" href="css/user_all.css">
+	<meta charset="utf-8">
+	<script  src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/reg2.js"></script>
+		
+	
+	<script type="text/javascript"  src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	
+</head>
+<body>
+			
+	<div id='header'>
+	<div id='top'>
+		<img src="shapka.jpg" id='img_1'>
+	</div>
+			<!-- для блока user-->
+		<div id="user_wrapper" style="visibility: hidden; position: absolute; top: 150px; left: 20px;z-index: 998"> 
+	<div id="left_block" style="visibility: hidden">
+		<p id='div_name'></p>
+		<ul>
+			<li><img src="avatar.jpg"  style="height: 100px" > </li>
+			<li><a id="user_hash">моя страница</a></li>
+			<li><a id="users_all" href="index.html#users_all">Все пользователи</a></li>
+			<li><a href="index.html#add">Мои друзья</a></li>
+			<li><a href="index.html#auth">Выход</a></li>
+		</ul>
+		
+	</div>
+	<form id="map"  type="submit" style="visibility: visible">
+	</form>
+	
+	<form id="first_form" method="POST">
+	<input id="title_txt" type='text' placeholder='Заголовок'><br>
+    <textarea id="textarea_txt" name='textarea_txt'></textarea><br>
+    <input id="submit" type="submit" value="Сохранить"></input>
+	</form>
+
+	<form id="message_info" style="height: auto; width: auto;">
+	
+</form>
+	</div>
+	<!-- для блока auth-->
+		<div id="container" style="visibility: hidden; position: absolute; top: 100px; left: 230px;z-index: 998">
+	<center>
+		
+		<h3>Вход на сайт</h3>
+		<table>
+			<tr>
+				<td>Имя:</td>
+				<td> <input type="text" id="name"> </td>
+			</tr>
+			<tr>
+				<td>Пароль:</td>
+				<td> <input type="password" id="password"> </td>
+			</tr>
+			<tr>
+				<td> <input type="submit" id="registration" value="Регистрация"> </td>
+			</tr>
+			<tr>
+				<td> <input type="submit" id="submit_in" value="Вход"> </td>
+			</tr>
+		</table>
+	</center>
+		
+</div>
+	<input type="button"  style= "float: right" id="input" value='Вход'></input><br>
+						<!-- для блока регистрации-->
+		 <div id='wrapper' style='visibility: hidden'>
+			<div id='title'style= "height: 40px">
+				<center><p style='color: yellow'>Регистрация пользователя</p> </center>
+			</div>
+		
+		<p  class='p_reg'  style="margin-left: 75px">name</p>
+		<center><input type="text" id="first_name" placeholder="name"><br></center>
+		
+		<p  class='p_reg' style="margin-left: 75px">last</p> 
+		<center><input type="text" id="last" placeholder="last"><br></center>
+		
+		<p  class='p_reg' style="margin-left: 75px">email</p>
+		<center><input type="email" id="email" placeholder="email"><br></center>
+		
+		<p  class='p_reg' style="margin-left: 75px">password</p>
+		<center><input type="password" id="pass" placeholder="password"><br></center>
+		
+		<p  class='p_reg' style="margin-left: 75px">age</p>
+		<center><input type="text" id="age" placeholder="age" style="margin-bottom: 10px"><br></center>
+		
+		<input id="submit_reg" type="submit" value="Отправить" style="margin-left: 95px">
+
+	</div> 
+
+		<form id="user_all_form" style="visibility: hidden; position: absolute; top: 175px; left: 90px">
+	
+		</form>
+
+		<form id="my_friends_form" style="visibility: hidden; position: absolute; top: 175px; left: 390px">
+	
+		</form>
+
+				
+	</div>
+				
+
+
+
+</body>
+	
+		
+		<script type="text/javascript" src="js/registration.js"></script>
+		<script type="text/javascript" src="js/auth.js"></script>
+
+		<script type="text/javascript" src="js/all_users.js"></script>
+		<script type="text/javascript" src="js/add_user.js"></script>
+
+		<script type="text/javascript">
+		if(window.location.hash==''){
+			window.location.hash='#registration';
+		}
+	if(window.location.hash=='#auth'){
+		document.getElementById('wrapper').style.visibility='hidden';
+   		document.getElementById('container').style.visibility='visible';
+   		document.getElementById('user_wrapper').style.visibility='hidden';
+   		document.getElementById('input').style.visibility='hidden';
+   		document.getElementById('user_all_form').style.visibility='hidden';
+   		document.getElementById('map').style.visibility='hidden';
+   		document.getElementById('left_block').style.visibility='hidden';
+	}else 
+	if(window.location.hash=='#registration'){
+		document.getElementById('wrapper').style.visibility='visible';
+   		document.getElementById('container').style.visibility='hidden';
+   		document.getElementById('user_wrapper').style.visibility='hidden';
+   		document.getElementById('input').style.visibility='visible';
+   		document.getElementById('user_all_form').style.visibility='hidden';
+   		document.getElementById('map').style.visibility='hidden';
+   		document.getElementById('left_block').style.visibility='hidden';
+	}else 
+	if(window.location.hash=='#users_all'){
+		document.getElementById('wrapper').style.visibility='hidden';
+   		document.getElementById('container').style.visibility='hidden';
+   		document.getElementById('user_wrapper').style.visibility='hidden';
+   		document.getElementById('input').style.visibility='hidden';
+   		document.getElementById('map').style.visibility='hidden';
+   		document.getElementById('user_all_form').style.visibility='visible';
+   		document.getElementById('left_block').style.visibility='visible';
+   		
+	}else 
+	if(window.location.hash=='#add'){
+		document.getElementById('wrapper').style.visibility='hidden';
+   		document.getElementById('container').style.visibility='hidden';
+   		document.getElementById('user_wrapper').style.visibility='hidden';
+   		document.getElementById('input').style.visibility='hidden';
+   		document.getElementById('map').style.visibility='hidden';
+   		document.getElementById('my_friends_form').style.visibility='visible';
+   		document.getElementById('left_block').style.visibility='visible';
+   		
+	}else
+	if(window.location.hash!='#registration' && window.location.hash!='#auth'){
+		document.getElementById('wrapper').style.visibility='hidden';
+   		document.getElementById('container').style.visibility='hidden';
+   		document.getElementById('user_wrapper').style.visibility='visible';
+   		document.getElementById('user_wrapper').style.visibility='visible';
+   		document.getElementById('input').style.visibility='hidden';
+   		document.getElementById('map').style.visibility='visible';
+   		document.getElementById('user_all_form').style.visibility='hidden';
+   		document.getElementById('left_block').style.visibility='visible';
+   		
+	}
+			var button = document.getElementById('input');
+			button.onclick = function(){
+			
+		window.location.href="http://homework_test/index.html#auth";
+		location.reload();
+	}
+		</script>
+	
+</html>
