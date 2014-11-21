@@ -1,6 +1,4 @@
 	// форма авторизации
-
-
 	var str       =[];
 	var flag_name = false;
 	var flag_pass = false;
@@ -18,22 +16,20 @@
 		var name     = $('#name').val();
 		var password = $('#password').val();
 
-		for(var k = 0; k < str.length;k++){
-
-			if(str[k].user.name){
-				if (name!="") {
-					if(name == str[k].user.name){
-						flag_name = true;
-						count     = str[k].user.hash;
-						localStorage.setItem('user_id',str[k].user.id);
-
-						if (password==str[k].user.pass) {
-	     					flag_pass = true;
-	    				}
-					}
-					
+	for(var k = 0; k < str.length;k++){
+		if(str[k].user.name){
+			if (name!="") {
+				if(name == str[k].user.name){
+					flag_name = true;
+					count     = str[k].user.hash;
+					localStorage.setItem('user_id',str[k].user.id);
+					if (password==str[k].user.pass) {
+	     				flag_pass = true;
+	    			}
 				}
-			}		
+					
+			}
+		}		
 	}
 
 	if (flag_name==true && flag_pass==true) {
@@ -50,7 +46,6 @@
 		}
 
 	if(flag_pass==false){
-			alert("Пароль не правильный. Повторите попытку!");
+			alert("Не правильный пароль!");
 		}
-
 	});

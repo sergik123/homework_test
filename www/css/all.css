@@ -1,0 +1,139 @@
+/*для авторизации*/
+#submit{
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 0px;
+
+	}
+#registration{
+	position: absolute;
+	margin-left: 60px;
+	margin-top: 4px;
+	}
+#container{
+	visibility: hidden;
+	position: absolute;
+	top: 100px;
+	left: 230px;
+	z-index: 998;
+}
+#input{
+	float: right;
+}
+/*для регистрации*/
+.p_reg{
+	margin: 0;
+	font-style: italic;
+	margin-left: 75px;
+}
+#wrapper{
+	margin-left: 200px;
+	background-color: #eee9e9;
+	margin-right: 420px;
+	border: 3px solid black;
+	box-shadow: 3px 3px 3px gray;
+	width: 300px;
+	height: 350px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	}
+#title{
+	padding: 0px;
+	background-color:  #0000FF;
+	border: 3px solid black;
+	height: 40px;
+}
+#header{
+	height: 700px;
+	width: 100%;
+	border: 2px solid black;
+	box-shadow: 3px 3px 3px gray;
+}
+#img_header{
+	height: 100px;
+	width: 100%;
+}
+#input{
+	margin-right: 20px;
+	font-size: 18px;
+}
+#wrapper{
+	visibility: hidden;
+}
+#age{
+	margin-bottom: 10px;
+}
+#submit_reg{
+	margin-left: 95px;
+}
+#user_all_form{
+	visibility: hidden;
+	position: absolute;
+	top: 175px;
+	left: 90px;
+}
+#my_friends_form{
+	visibility: hidden;
+	position: absolute;
+	top: 175px;
+	left: 390px;
+}
+/*для вкладки user*/
+#map 
+{
+	width: 500px;
+	height: 400px;
+	visibility: visible;
+}
+#left_block
+{
+	float: left;
+	margin-right: 20px;
+	visibility: hidden;
+}
+ul
+{
+	list-style: none;
+}
+#bodyContent
+{
+	min-width: 100px;
+	min-height: 100px;
+}
+#first_form
+{
+	visibility: hidden;
+}
+#message_info
+{
+	visibility: hidden;
+	text-align: center;
+	margin: 0px;
+	height: auto;
+	width: auto;
+}
+#div_name
+{
+	margin: 0px 20px 0px 40px;
+}
+
+#user_wrapper{
+	visibility: hidden;
+	position: absolute;
+	top: 150px;
+	left: 20px;
+	z-index: 998;
+}
+#avatar{
+	height: 100px;
+}
+/*для вкладки все пользователи*/
+#div_list_users{
+	float: left;
+	margin-left: 200px;
+	overflow: auto;
+}
+#div_add_user{
+	margin-left: 400px;
+	padding-top: 1px;
+}

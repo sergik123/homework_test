@@ -1,41 +1,57 @@
-	.p_reg{
-		margin: 0;
-		font-style: italic;
+.p_reg{
+	margin: 0;
+	font-style: italic;
+	margin-left: 75px;
+}
+#wrapper{
+	margin-left: 200px;
+	background-color: #eee9e9;
+	margin-right: 420px;
+	border: 3px solid black;
+	box-shadow: 3px 3px 3px gray;
+	width: 300px;
+	height: 350px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	}
-	#wrapper{
-		margin-left: 200px;
-		background-color: #eee9e9;
-		margin-right: 420px;
-		border: 3px solid black;
-		box-shadow: 3px 3px 3px gray;
-		width: 300px;
-		height: 350px;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-	#title{
-		padding: 0px;
-		background-color:  #0000FF;
-		border: 3px solid black;
-	}
-	#header{
-		height: 700px;
-		width: 100%;
-		border: 2px solid black;
-		box-shadow: 3px 3px 3px gray;
-
-
-	}
-
-	
-	#img_1{
-		height: 100px;
-		width: 100%;
-	}
-	body{
-
-	}
-	#input{
-		margin-right: 20px;
-		font-size: 18px;
-	}
+#title{
+	padding: 0px;
+	background-color:  #0000FF;
+	border: 3px solid black;
+	height: 40px;
+}
+#header{
+	height: 700px;
+	width: 100%;
+	border: 2px solid black;
+	box-shadow: 3px 3px 3px gray;
+}
+#img_header{
+	height: 100px;
+	width: 100%;
+}
+#input{
+	margin-right: 20px;
+	font-size: 18px;
+}
+#wrapper{
+	visibility: hidden;
+}
+#age{
+	margin-bottom: 10px;
+}
+#submit_reg{
+	margin-left: 95px;
+}
+#user_all_form{
+	visibility: hidden;
+	position: absolute;
+	top: 175px;
+	left: 90px;
+}
+#my_friends_form{
+	visibility: hidden;
+	position: absolute;
+	top: 175px;
+	left: 390px;
+}

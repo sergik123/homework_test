@@ -1,9 +1,9 @@
 #div_list_users{
-			float: left;
-			margin-left: 200px;
-			overflow: auto;
-		}
+	float: left;
+	margin-left: 200px;
+	overflow: auto;
+}
 #div_add_user{
-			margin-left: 400px;
-			padding-top: 1px;
-		}
+	margin-left: 400px;
+	padding-top: 1px;
+}
