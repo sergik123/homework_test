@@ -1,4 +1,4 @@
-	// форма авторизации
+	// страница авторизации
 	var str       =[];
 	var flag_name = false;
 	var flag_pass = false;
@@ -9,8 +9,7 @@
 		window.location.href="http://homework_test/index.html#registration";
 	});
 
-	//здесь при нажатии на кнопку проверяется логин и пароль с теми которые хранятся в localstorage
-	//если они совпадают то мы записываем в user_id текущий id пользователя и заходим на его страницу
+	//при клике на кнопку проверяется имя и пароль с теми что хранятся в localstorage
 	$('#submit_in').on('click',function(){
 
 		var name     = $('#name').val();
@@ -38,14 +37,14 @@
 	};
 
 	if (password=="") {
-	     alert("Введите пароль пожалуйста!");		
+	     alert("please enter password!");		
 	    }
 
 	if(flag_name==false){
-			alert("Такой пользователь не зарегистрирован на сайте!");
+			alert("login not found");
 		}
 
 	if(flag_pass==false){
-			alert("Не правильный пароль!");
+			alert("password not found!");
 		}
 	});
