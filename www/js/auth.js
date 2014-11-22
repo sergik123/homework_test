@@ -1,4 +1,4 @@
-	// страница авторизации
+	// СЃС‚СЂР°РЅРёС†Р° Р°РІС‚РѕСЂРёР·Р°С†РёРё
 	var str       =[];
 	var flag_name = false;
 	var flag_pass = false;
@@ -9,7 +9,7 @@
 		window.location.href="http://homework_test/index.html#registration";
 	});
 
-	//при клике на кнопку проверяется имя и пароль с теми что хранятся в localstorage
+	//РїСЂРё РєР»РёРєРµ РЅР° РєРЅРѕРїРєСѓ РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РёРјСЏ Рё РїР°СЂРѕР»СЊ СЃ С‚РµРјРё С‡С‚Рѕ С…СЂР°РЅСЏС‚СЃСЏ РІ localstorage
 	$('#submit_in').on('click',function(){
 
 		var name     = $('#name').val();
