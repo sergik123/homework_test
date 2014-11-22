@@ -1,11 +1,9 @@
 // страница user
-window.onload = init;
-function init(){
 	navigator.geolocation.getCurrentPosition(function(response) {
 	       	initialize(response.coords);
 	     });
 		var map;
-		var count      = 0;
+		var count_str      = 0;
 		var marker;
 		var tmp        = 0;
 		var tmp1;
@@ -15,6 +13,7 @@ function init(){
 		var markers_title       = [];
 		var markers_description = [];
 		var marker_str = localStorage.users ? JSON.parse(localStorage.users) : [];	
+		var markerLatLng;
 	//этот цикл определяет hash текущего пользователя и создает ссылку 
 	//чтоб можно было переходить по моей странице и попадать на страницу текущего пользователя
 		for(var k=0; k<marker_str.length;k++){
@@ -22,8 +21,10 @@ function init(){
 				if(marker_str[k].user.id==localStorage.user_id){
 			var a = document.getElementById('user_hash');
 			a.setAttribute('href','index.html#hash='+ marker_str[k].user.hash);
+
 		}
-			count = marker_str[k].user.id;
+		count_str = marker_str[k].user.id;
+			console.log(count_str);
 			}
 		}
 		$('#user_hash').on('click',function(){
@@ -44,25 +45,25 @@ function init(){
 
 		function initialize(coords) {
 			map_coords(coords);
-
-			if(marker_str[count].user.id==localStorage.user_id){
+			console.log(count_str);
+			console.log(marker_str[count_str]);
+			if(marker_str[count_str].user.id==localStorage.user_id){
 				maps_click();
-			}
-				
+			}	
 			// цикл в который записываем координаты и описание полученные с localstorage
-		for (var j = 0; j <=marker_str[count].user.markers.lat.length; j++) {
-		markers_lat.push(marker_str[count].user.markers.lat[j]);
-		markers_lon.push(marker_str[count].user.markers.lon[j]);
-		markers_title.push(marker_str[count].user.markers.title[j]);
-		markers_description.push(marker_str[count].user.markers.description[j]);
+		for (var j = 0; j <=marker_str[count_str].user.markers.lat.length; j++) {
+		markers_lat.push(marker_str[count_str].user.markers.lat[j]);
+		markers_lon.push(marker_str[count_str].user.markers.lon[j]);
+		markers_title.push(marker_str[count_str].user.markers.title[j]);
+		markers_description.push(marker_str[count_str].user.markers.description[j]);
 			
-	    markerLatLng = new google.maps.LatLng(marker_str[count].user.markers.lat[j],marker_str[count].user.markers.lon[j]);
+	    markerLatLng = new google.maps.LatLng(marker_str[count_str].user.markers.lat[j],marker_str[count_str].user.markers.lon[j]);
 	    marker = new google.maps.Marker({
 		position: markerLatLng,
 		map: map,
 		title: "text"
  		});	
-	    if(marker_str[count].user.id==localStorage.user_id){
+	    if(marker_str[count_str].user.id==localStorage.user_id){
 	    		myFunction_change();
 				calc();
 	    }
@@ -100,8 +101,8 @@ function init(){
 		};
 		points(event.latLng.k,event.latLng.B);
 		addinfowindow(point,contentString);
-document.getElementById('textarea_txt').value =marker_str[count].user.markers.description[tmp];
-document.getElementById('title_txt').value = marker_str[count].user.markers.title[tmp];
+document.getElementById('textarea_txt').value =marker_str[count_str].user.markers.description[tmp];
+document.getElementById('title_txt').value = marker_str[count_str].user.markers.title[tmp];
 	        	
 	    });	  
 	};
@@ -138,8 +139,8 @@ document.getElementById('title_txt').value = marker_str[count].user.markers.titl
 
 	markers_lat.push(lat_arr);
 	markers_lon.push(lon_arr);
-	marker_str[count].user.markers.lat = markers_lat;
-	marker_str[count].user.markers.lon = markers_lon;
+	marker_str[count_str].user.markers.lat = markers_lat;
+	marker_str[count_str].user.markers.lon = markers_lon;
 	markerLatLng = new google.maps.LatLng(lat_arr, lon_arr);
 	localStorage.users = JSON.stringify(marker_str);		
 	placemarker(markerLatLng);
@@ -160,8 +161,8 @@ document.getElementById('title_txt').value = marker_str[count].user.markers.titl
 	markers_description[tmp]=cnt;
 	markers_title[tmp]=title_txt;
 
-	marker_str[count].user.markers.title = markers_title;
-	marker_str[count].user.markers.description = markers_description;
+	marker_str[count_str].user.markers.title = markers_title;
+	marker_str[count_str].user.markers.description = markers_description;
 
 	localStorage.users = JSON.stringify(marker_str);	
 	contentStr.style.visibility='hidden';
@@ -175,22 +176,22 @@ document.getElementById('title_txt').value = marker_str[count].user.markers.titl
 
  		contentString.style.visibility='hidden';
 
- 	for(var i=0; i<marker_str[count].user.markers.lat.length; i++){
- 		if(event.latLng.k==marker_str[count].user.markers.lat[i]){
+ 	for(var i=0; i<marker_str[count_str].user.markers.lat.length; i++){
+ 		if(event.latLng.k==marker_str[count_str].user.markers.lat[i]){
  			tmp = i;
  			markers_title.push(' ');
  			markers_description.push(' ');
  			}
  		}
- 		if(typeof(marker_str[count].user.markers.title[tmp])=="undefined" || typeof(marker_str[count].user.markers.title[tmp])=="object"){
-			marker_str[count].user.markers.title = markers_title;
-			marker_str[count].user.markers.description = markers_description;
-			contentStr.innerHTML='<div id="content" onclick="show()"><h2 id="mes_title" style="margin: 0px">'+marker_str[count].user.markers.title[tmp]+'</h2>'+
-	'<p id="content_mes" style="margin: 0px">'+marker_str[count].user.markers.description[tmp]+'</p></div>';
+ 		if(typeof(marker_str[count_str].user.markers.title[tmp])=="undefined" || typeof(marker_str[count_str].user.markers.title[tmp])=="object"){
+			marker_str[count_str].user.markers.title = markers_title;
+			marker_str[count_str].user.markers.description = markers_description;
+			contentStr.innerHTML='<div id="content" onclick="show()"><h2 id="mes_title" style="margin: 0px">'+marker_str[count_str].user.markers.title[tmp]+'</h2>'+
+	'<p id="content_mes" style="margin: 0px">'+marker_str[count_str].user.markers.description[tmp]+'</p></div>';
  		}
  		else{
- 			contentStr.innerHTML='<div id="content" onclick="show()"><h2 id="mes_title" style="margin: 0px">'+marker_str[count].user.markers.title[tmp]+'</h2>'+
-	'<p id="content_mes" style="margin: 0px">'+marker_str[count].user.markers.description[tmp]+'</p></div>';
+ 			contentStr.innerHTML='<div id="content" onclick="show()"><h2 id="mes_title" style="margin: 0px">'+marker_str[count_str].user.markers.title[tmp]+'</h2>'+
+	'<p id="content_mes" style="margin: 0px">'+marker_str[count_str].user.markers.description[tmp]+'</p></div>';
  		}
 	     	contentStr.style.visibility='visible';
 			points(event.latLng.k,event.latLng.B);
@@ -209,4 +210,4 @@ document.getElementById('title_txt').value = marker_str[count].user.markers.titl
 		};
  	});
  }
-	}	
+	
