@@ -4,8 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<meta charset="utf-8">
 	<script  src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/reg2.js"></script>
-	<script type="text/javascript"  src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	
 </head>
 <body>		
 <div id='header'>
@@ -80,69 +79,11 @@
 	</form>			
 </div>
 </body>
-	<script type="text/javascript" src="js/registration.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/auth.js"></script>
+	<script type="text/javascript"  src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="js/reg2.js"></script>
 	<script type="text/javascript" src="js/all_users.js"></script>
 	<script type="text/javascript" src="js/add_user.js"></script>
-	<script type="text/javascript">
-		if(window.location.hash==''){
-			window.location.hash='#registration';
-		}
-	if(window.location.hash=='#auth'){
-		document.getElementById('wrapper').style.visibility='hidden';
-   		document.getElementById('container').style.visibility='visible';
-   		document.getElementById('user_wrapper').style.visibility='hidden';
-   		document.getElementById('input').style.visibility='hidden';
-   		document.getElementById('user_all_form').style.visibility='hidden';
-   		document.getElementById('map').style.visibility='hidden';
-   		document.getElementById('left_block').style.visibility='hidden';
-	}else 
-	if(window.location.hash=='#registration'){
-		document.getElementById('wrapper').style.visibility='visible';
-   		document.getElementById('container').style.visibility='hidden';
-   		document.getElementById('user_wrapper').style.visibility='hidden';
-   		document.getElementById('input').style.visibility='visible';
-   		document.getElementById('user_all_form').style.visibility='hidden';
-   		document.getElementById('map').style.visibility='hidden';
-   		document.getElementById('left_block').style.visibility='hidden';
-	}else 
-	if(window.location.hash=='#users_all'){
-		document.getElementById('wrapper').style.visibility='hidden';
-   		document.getElementById('container').style.visibility='hidden';
-   		document.getElementById('user_wrapper').style.visibility='hidden';
-   		document.getElementById('input').style.visibility='hidden';
-   		document.getElementById('map').style.visibility='hidden';
-   		document.getElementById('user_all_form').style.visibility='visible';
-   		document.getElementById('left_block').style.visibility='visible';
-   		
-	}else 
-	if(window.location.hash=='#add'){
-		document.getElementById('wrapper').style.visibility='hidden';
-   		document.getElementById('container').style.visibility='hidden';
-   		document.getElementById('user_wrapper').style.visibility='hidden';
-   		document.getElementById('input').style.visibility='hidden';
-   		document.getElementById('map').style.visibility='hidden';
-   		document.getElementById('my_friends_form').style.visibility='visible';
-   		document.getElementById('left_block').style.visibility='visible';
-   		
-	}else
-	if(window.location.hash!='#registration' && window.location.hash!='#auth'){
-		document.getElementById('wrapper').style.visibility='hidden';
-   		document.getElementById('container').style.visibility='hidden';
-   		document.getElementById('user_wrapper').style.visibility='visible';
-   		document.getElementById('user_wrapper').style.visibility='visible';
-   		document.getElementById('input').style.visibility='hidden';
-   		document.getElementById('map').style.visibility='visible';
-   		document.getElementById('user_all_form').style.visibility='hidden';
-   		document.getElementById('left_block').style.visibility='visible';
-   		
-	}
-			var button = document.getElementById('input');
-			button.onclick = function(){
-			
-		window.location.href="http://homework_test/index.html#auth";
-		//location.reload();
-	}
-		</script>
-	
+	<script type="text/javascript" src="js/registration.js"></script>
 </html>
