@@ -43,11 +43,11 @@
 
 	button1[i].onclick = function(){
 		if(this.value=="user is your friends"){
-			alert('пользователь уже у вас в друзьях');
+			alert('user is already in your friends');
 		}else{
 	user_id_friends.push(this.id);
-	alert('Пользователь добавлен в друзья');
-	this.value="пользователь у вас в друзьях";
+	alert('user is added in your friends');
+	this.value="user in your friends";
 	marker_str[count].user.id_friends = user_id_friends;
 	localStorage.users = JSON.stringify(marker_str);	
 	}			
@@ -57,7 +57,7 @@
 		location.reload();
 	});
 	for(var j = 0; j< marker_str[count].user.id_friends.length;j++){
-	button1[marker_str[count].user.id_friends[j]].value = "пользователь у вас в друзьях";
+	button1[marker_str[count].user.id_friends[j]].value = "user in your friends";
 	}
 	var k=-1;
 	$(button1).each(function(){
