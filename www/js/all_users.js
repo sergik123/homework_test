@@ -8,15 +8,15 @@
 	//этот цикл определяет id текущего пользователя и создает ссылку
 	//чтоб можно было переходить на мою страницу
 	for(var k = 0; k < marker_str.length;k++){
-		if(marker_str[k].user.id == localStorage.user_id){
-			var a = document.getElementById('user_hash');
-			a.setAttribute('href','index.html#hash='+ marker_str[k].user.hash);
-			count = k;	
-		}
+	if(marker_str[k].user.id == localStorage.user_id){
+		var a = document.getElementById('user_hash');
+		a.setAttribute('href','index.html#hash='+ marker_str[k].user.hash);
+		count = k;	
+	}
 	}
 	//записывает всех user в массив user_id_friends
 	for(var i = 0; i < marker_str[count].user.id_friends.length; i++){
-		user_id_friends.push(marker_str[count].user.id_friends[i]);
+	user_id_friends.push(marker_str[count].user.id_friends[i]);
 	}
 	var div         = document.createElement('div');
 	div.id          = "div_list_users";
@@ -42,9 +42,9 @@
 	form_all_us.appendChild(div1);	
 
 	button1[i].onclick = function(){
-		if(this.value=="user is your friends"){
+	if(this.value=="user is your friends"){
 			alert('user is already in your friends');
-		}else{
+	}else{
 	user_id_friends.push(this.id);
 	alert('user is added in your friends');
 	this.value="user in your friends";
