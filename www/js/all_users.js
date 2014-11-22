@@ -1,12 +1,12 @@
-	// страница все пользователи
+	// СЃС‚СЂР°РЅРёС†Р° РІСЃРµ РїРѕР»СЊР·РѕРІР°С‚РµР»Рё
 
 	var user_id_friends = [];
 	var marker_str      = [];
 	marker_str          = localStorage.users ? JSON.parse(localStorage.users) : [];
 	var count;
 
-	///этот цикл определяет id текущего пользователя и создает ссылку 
-	//чтоб можно было переходить по моей странице и попадать на страницу текущего пользователя
+	//СЌС‚РѕС‚ С†РёРєР» РѕРїСЂРµРґРµР»СЏРµС‚ id С‚РµРєСѓС‰РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ Рё СЃРѕР·РґР°РµС‚ СЃСЃС‹Р»РєСѓ
+	//С‡С‚РѕР± РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РїРµСЂРµС…РѕРґРёС‚СЊ РЅР° РјРѕСЋ СЃС‚СЂР°РЅРёС†Сѓ
 	for(var k = 0; k < marker_str.length;k++){
 		if(marker_str[k].user.id == localStorage.user_id){
 			var a = document.getElementById('user_hash');
@@ -14,7 +14,7 @@
 			count = k;	
 		}
 	}
-	//записываем всех user в массив user_id_friends
+	//Р·Р°РїРёСЃС‹РІР°РµС‚ РІСЃРµС… user РІ РјР°СЃСЃРёРІ user_id_friends
 	for(var i = 0; i < marker_str[count].user.id_friends.length; i++){
 		user_id_friends.push(marker_str[count].user.id_friends[i]);
 	}
@@ -24,8 +24,8 @@
 	div1.id         = "div_add_user";
 	var button1     = document.getElementsByName('set_btn');
 	var form_all_us = document.getElementById("user_all_form");
-	//проходим циклом по по всем пользователям и записываем на страницу их имя и фамилию
-	// и добавляем каждому из них нужный hash
+	//РїРµСЂРµС…РѕРґРёРј С†РёРєР»РѕРј РїРѕ РІСЃРµ user Рё Р·Р°РїРёСЃС‹РІР°РµРј РЅР° СЃС‚СЂР°РЅРёС†Сѓ РёС… РёРјСЏ Рё С„Р°РјРёР»РёСЋ
+	// Рё РґРѕР±Р°РІР»СЏРµРј РєР°Р¶РґРѕРјСѓ РёР· РЅРёС… РЅСѓР¶РЅС‹Р№ hash
 	for (var i = 0; i < marker_str.length; i++) {
 	var p  = document.createElement('p');
 	var p1 = document.createElement('p');
@@ -33,7 +33,7 @@
 	p.setAttribute("style", "font-size: 14pt");
 	p1.setAttribute("style", "font-size: 14pt");
 	p.innerHTML  ='<a  href=index.html#hash='+marker_str[i].user.hash+'>'+marker_str[i].user.name+' '+marker_str[i].user.last+'</a>'+'<br>';
-	p1.innerHTML = '<input type="button" value="добавить в друзья" name="set_btn">'+'<br>';
+	p1.innerHTML = '<input type="button" value="add friends" name="set_btn">'+'<br>';
 	
 	div.appendChild(p);
 	div1.appendChild(p1);
@@ -42,12 +42,12 @@
 	form_all_us.appendChild(div1);	
 
 	button1[i].onclick = function(){
-		if(this.value=="пользователь у вас в друзьях"){
-			alert('пользователь уже у вас в друзьях');
+		if(this.value=="user is your friends"){
+			alert('РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓР¶Рµ Сѓ РІР°СЃ РІ РґСЂСѓР·СЊСЏС…');
 		}else{
 	user_id_friends.push(this.id);
-	alert('пользователь добавлен в друзья');
-	this.value="пользователь у вас в друзьях";
+	alert('РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РґРѕР±Р°РІР»РµРЅ РІ РґСЂСѓР·СЊСЏ');
+	this.value="РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ Сѓ РІР°СЃ РІ РґСЂСѓР·СЊСЏС…";
 	marker_str[count].user.id_friends = user_id_friends;
 	localStorage.users = JSON.stringify(marker_str);	
 	}			
@@ -57,7 +57,7 @@
 		location.reload();
 	});
 	for(var j = 0; j< marker_str[count].user.id_friends.length;j++){
-		button1[marker_str[count].user.id_friends[j]].value = "пользователь у вас в друзьях";
+	button1[marker_str[count].user.id_friends[j]].value = "РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ Сѓ РІР°СЃ РІ РґСЂСѓР·СЊСЏС…";
 	}
 	var k=-1;
 	$(button1).each(function(){
